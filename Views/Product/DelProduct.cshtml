@@ -1,0 +1,19 @@
+﻿@using Grocery_Store.Entity
+@*@model System.Collections.Generic.IEnumerable<Product>*@
+@model Grocery_Store.Entity.Product
+@{
+    ViewData["Title"] = "Delete Product";
+}
+
+@using (Html.BeginForm())
+{
+    <h2>
+        Delete Confirmation
+    </h2>
+
+    <p style="color:red;">@ViewBag.ErrorMessage</p>
+
+  
+
+    <input name="confirmButton" type="submit" value="Delete" />
+}

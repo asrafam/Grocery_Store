@@ -1,0 +1,28 @@
+﻿@*@model Grocery_Store.Entity.Product*@
+@using Grocery_Store.Entity
+@model System.Collections.Generic.IEnumerable<Product>
+<!DOCTYPE html>
+
+<html>
+<head>
+    c
+    <title>Vegetables Page</title>
+</head>
+<body>
+
+
+
+    <div>
+        @await Html.PartialAsync("_VegDetails", Model)
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+

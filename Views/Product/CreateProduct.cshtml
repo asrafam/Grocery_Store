@@ -1,0 +1,88 @@
+﻿
+@model Grocery_Store.Context.ProductModel
+@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+<style>
+    input, select, button {
+        width: 100%;
+    }
+
+    #category {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    #name, #price, #qty {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p style="color:red;">@ViewBag.ErrorMessage</p>
+
+
+    <br />
+    <label for="name">Name</label>
+
+    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name of product.." } })
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    <br />
+
+    <label for="price">Price</label>
+
+    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @placeholder = "Price of Product in Rs..." } })
+    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+    <br />
+    <label for="qty">Quantity</label>
+
+    @Html.EditorFor(model => model.Qty, new { htmlAttributes = new { @class = "form-control", @placeholder = "Quantity in kgs..." } })
+    @Html.ValidationMessageFor(model => model.Qty, "", new { @class = "text-danger" })
+    <br />
+
+    <label for="category">Category</label>
+    <select id="category" name="category">
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="meat">Meat</option>
+        <option value="bakery">Bakery</option>
+        <option value="seafood">Seafood</option>
+        <option value="spices">Spices</option>
+    </select><br />
+    @Html.HiddenFor(m => m.Category, new { id = "Category" })
+
+    <input type="file" name="FileName" />
+
+
+    <input type="submit" value="Submit" asp-action="CreateProduct">
+
+
+}
+
+@*@if (ViewBag.SuccessMessage == "true")
+    {
+        <div style="font-size: 16px; font-style: italic;">
+            <p>
+                Name of the added product : @Html.DisplayFor(m => m.Result.Name)<br><br />
+                Price : @Html.DisplayFor(m => m.Result.Price)<br><br />
+                Quantity: @Html.DisplayFor(m => m.Result.Qty)<br><br />
+                Chosen Category for the added product is @Html.DisplayFor(m => m.Result.Category) <br><br />
+
+            </p>
+        </div>
+    }*@
+
+
+
+
+

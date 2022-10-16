@@ -1,0 +1,545 @@
+﻿@using Grocery_Store.ViewModel.Components
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="~/css/footer.css">
+
+    @*<link rel="stylesheet" type="text/css" href="~/css/footer.css">*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav class="navbar navbar-expand-lg nav-upper">
+
+
+    <div class="collapse navbar-collapse" textalign="inline" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+
+            <li style="margin-right: 10px;"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li style="margin-right: 10px;"><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li style="margin-right: 10px;"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+        </ul>
+        <ul class="nav justify-content-end">
+            <li style="margin-right: 10px;">
+                @(await Component.InvokeAsync("TopMenu"))
+            </li>
+            <partial name="_LoginPartial" />
+            @*<li style="margin-right: 10px;"><a asp-area="" asp-controller="Product" asp-action="ProductList">Product List</a></li>
+        <li style="margin-right: 10px;"><a asp-area="" asp-controller="Product" asp-action="CreateProduct">Add Product</a></li>*@
+            @*<li style="margin-right: 10px;"><a asp-area="" asp-page=" ././Areas/Identity/Pages/Account/Login">Login</a></li>*@
+            @*<li style="margin-right: 10px;"><a asp-area="" asp-page="./Register.cshtml">SignUp</a></li>
+        <li style="margin-right: 10px;"><a asp-area="" asp-page="./Logout.cshtml">Logout</a></li>*@
+            <li style="margin-right: 10px;">
+                <a asp-area="" asp-controller="Role" asp-action="Index">Role</a>
+            </li>
+            @*<li style="margin-right: 10px;"><a asp-area="" asp-controller="Product" asp-action="ViewProduct">View Product</a></li>*@
+        </ul>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    @*<img src="~/images/logo2.png" >*@
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Lower Navbar-->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        @*<img src="~/images/gro.jpg">*@
+        <ul class="navbar-nav">
+            <img style="height: 70px; width:100px ; margin-right:8px;" src="~/images/logof.png">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="fruit.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Fruits
+                </a>
+                <div class="dropdown-menu dropdown-column" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img class="img1" src="images/fruits.jpg">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item pad" href="#">Apples</a>
+                                </div>
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item pad" href="#">Oranges</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item" href="#">Banana</a>
+                                </div>
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item" href="#">Strawberries</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item" href="#">Grapes</a>
+                                </div>
+                                <div class="col-md-6 col-sm-1">
+                                    <a class="dropdown-item" href="#">Avocados</a>
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+            </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" asp-controller="Product" asp-action="Vegetables"> @*/*id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"*/>*@
+                    Vegetables
+                </a>
+                <div class="dropdown-menu veg-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="veg" src="images/vegetables.jpg">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item">Brinjal</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">LadyFinger</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Tomatoes</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cucumber</a>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">BeetRoot</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Bean</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Carrots</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Peas</a>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Potatoes</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cauliflower</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Ginger</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cabbage</a>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Turnip</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Pumpkin</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Radish</a>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Arum</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Mint</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Spinach</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Meat
+                </a>
+                <div class="dropdown-menu me" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="img1" src="images/meat1.jpg">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="dropdown-item" href="#">Beef</a>
+                                    <a class="dropdown-item" href="#">Mutton</a>
+                                    <a class="dropdown-item" href="#">Lamb</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Duck</a>
+                                    <a class="dropdown-item" href="#">Chicken</a>
+                                    <a class="dropdown-item" href="#">Turkey</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Bakery
+                </a>
+                <div class="dropdown-menu bak1" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img1" src="images/bakery.jpg">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Bread</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Bagels</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Butter</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Makhan</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Buns</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Rusk</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cookies</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Donuts</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cupcakes</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Brownies</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Paties</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cakes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Spices
+                </a>
+                <div class="dropdown-menu spc" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img1" src="images/spices.jpg">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Clove</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Garlic</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Salt</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="dropdown-item" href="#">Saffron</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Mustard</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cumin</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Cardamom</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="dropdown-item" href="#">Poppy-seed</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Aniseed</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Tumeric</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Coriander</a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="dropdown-item" href="#">Chilli</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Black-pepper</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Dry-ginger</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Fenugreek</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SeaFood
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img1" src="images/sea.jpg">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Crab</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Fish Fillets</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Fish Steak</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a class="dropdown-item" href="#">Fish Whole</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Shrimp</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Lobster</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a class="dropdown-item" href="#">Prepped Shelfish</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a class="dropdown-item" href="#">Salmon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+
+    @RenderBody()
+    <hr/>
+</body>
+
+
+<footer style="background-color: maroon; ">
+    <div class="row">
+        <div id="loc" class="col-xs-12">
+
+            <h1 class="sty" style="color: #ffff7e; padding-left: 400px; font-size: 60px;">Karachi . Lahore . Islamabad  </h1>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+
+        <div id="links" class="col-xs-12 col-md-4 col-lg-3">
+
+            <ol style="list-style-type: none;">
+                <br>
+                <li style="color: #ffff7e;" class="mainh"><span style="color:#FFE5B4;font-weight: bold">I</span>nformation</li>
+                <hr>
+                <li><a style="color: #ffff7e;" href="home.php">Home</a></li>
+
+                <li><a style="color: #ffff7e;" href="about.php">About</a></li>
+
+                <li><a style="color: #ffff7e;" href="contact.php">Contact</a></li>
+
+                <li><a style="color: #ffff7e;" href="review.php">Review</a></li>
+
+            </ol>
+
+        </div>
+
+        <div id="links" class="col-xs-12 col-md-4 col-lg-3">
+
+            <ol style="list-style-type: none;">
+                <br>
+                <li style="color: #ffff7e;" class="mainh"><span style="color:#FFE5B4;font-weight: bold">C</span>ategories</li>
+                <hr>
+
+                <li><a style="color: #ffff7e;" href="#">Fruits</a></li>
+
+                <li><a style="color: #ffff7e;" href="#">Vegetables</a></li>
+
+                <li><a style="color: #ffff7e;" href="#">Meat & Poultry</a></li>
+
+                <li><a style="color: #ffff7e;" href="#">Bakery & Pastry</a></li>
+
+                <li><a style="color: #ffff7e;" href="#">Spices</a></li>
+
+                <li><a style="color: #ffff7e;" href="#">SeaFood</a></li>
+
+            </ol>
+
+        </div>
+
+        <div id="add" class="col-xs-12 col-md-4 col-lg-4">
+            <br />
+            <div style="color: #ffff7e ;" class="address"><span style="color:#FFE5B4;font-weight: bold">O</span>ur Contacts</div>
+            <hr>
+
+            <div style="color: #ffff7e;" class="ic">
+                <p><span class="glyphicon glyphicon-map-marker"></span>  Nida Apartment , SB-5  Block-1  Gulshan-e-Iqbal Karachi,Pakistan</p>
+                <p><span class="glyphicon glyphicon-phone"></span>  0300-2469199</p>
+                <p><span class="glyphicon glyphicon-envelope"></span>  grocerycart01@gmail.com</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <div class="row" style="margin-top: -30px;">
+        <div class="col-lg-12" id="follow" style="text-align: center; color: #ffff7e;">
+
+            <p> Follow us on </p>
+
+            <hr>
+        </div>
+
+    </div>
+    <!-- Add font awesome icons -->
+
+    <div class="row">
+        <div class="col-lg-12" id="followlinks"  style="text-align: center; color: #ffff7e;">
+            <a href="#" class="fa fa-facebook" style="margin-left: 25px;"></a>
+            <a href="#" class="fa fa-twitter" style="margin-left: 25px;"></a>
+            <a href="#" class="fa fa-snapchat" style="margin-left: 25px;"></a>
+            <a href="#" class="fa fa-instagram" style="margin-left: 25px;"></a>
+            <a href="#" class="fa fa-google" style="margin-left: 25px;"></a>
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <!-- </div> -->
+</footer>
+</html>
+
+
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Grocery_Store</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>*@
+
+ <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2019 - Grocery_Store</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+</html>

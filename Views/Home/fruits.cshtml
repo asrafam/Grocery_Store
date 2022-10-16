@@ -1,0 +1,821 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fruits</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/grocfooter.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Rouge+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/grocfooter.css">
+
+
+
+    <style>
+
+        /*name overlay*/
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .2s ease;
+            background-color: #f4ee42;
+        }
+
+        .container:hover .overlay {
+            opacity: 0.5;
+        }
+
+
+        .text {
+            color: green;
+            font-weight: bold;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /*add cart */
+
+        .button {
+            border: none;
+            color: #909188;
+            padding: 13px 55px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button2 {
+            background-color: #f4ee42;
+        }
+
+        .checked {
+            color: #f4ee42;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <!-- Upper Navbar-->
+        <nav class="navbar navbar-expand-lg nav-upper">
+            <a style="font-size: 40px;" class="navbar-brand" href="home.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="nav justify-content-end">
+                    <li style="margin-right: 12px;">Login</li>
+                    <li style="margin-right: 12px;">SignUp</li>
+                    <li style="margin-right: 20px;">Cart</li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-lg btn-outline-success my-2 my-sm-0" style="margin-right: 10px;width: 70px;height: 50px;background-color: none" type="submit">Search</button>
+                </form>
+
+
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!--<img src="images/logo2.png" >-->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Lower Navbar-->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <!--  <img src="images/gro.jpg"> -->
+                <ul class="navbar-nav">
+                    <img style="height: 70px; width:100px ; margin-right:8px;" src="images/logof.png">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="fruit.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Fruits
+                        </a>
+                        <div class="dropdown-menu dropdown-column" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <img class="img1" src="images/fruits.jpg">
+                                </div>
+                                <div class="col-md-8 col-sm-6">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item pad" href="#">Apples</a>
+                                        </div>
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item pad" href="#">Oranges</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item" href="#">Banana</a>
+                                        </div>
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item" href="#">Strawberries</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item" href="#">Grapes</a>
+                                        </div>
+                                        <div class="col-md-6 col-sm-1">
+                                            <a class="dropdown-item" href="#">Avocados</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Vegetables
+                        </a>
+                        <div class="dropdown-menu veg-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img class="veg" src="images/vegetables.jpg">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row ">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Brinjal</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">LadyFinger</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Tomatoes</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cucumber</a>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">BeetRoot</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Bean</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Carrots</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Peas</a>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Potatoes</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cauliflower</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Ginger</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cabbage</a>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Turnip</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Pumpkin</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Radish</a>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Arum</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Mint</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Spinach</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Meat & Poultry
+                        </a>
+                        <div class="dropdown-menu me" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img class="img1" src="images/meat1.jpg">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <a class="dropdown-item" href="#">Beef</a>
+                                            <a class="dropdown-item" href="#">Mutton</a>
+                                            <a class="dropdown-item" href="#">Lamb</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Duck</a>
+                                            <a class="dropdown-item" href="#">Chicken</a>
+                                            <a class="dropdown-item" href="#">Turkey</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Bakery & Pastry
+                        </a>
+                        <div class="dropdown-menu bak1" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img class="img1" src="images/bakery.jpg">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Bread</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Bagels</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Butter</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Makhan</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Buns</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Rusk</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cookies</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Donuts</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cupcakes</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Brownies</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Paties</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cakes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Spices
+                        </a>
+                        <div class="dropdown-menu spc" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img class="img1" src="images/spices.jpg">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Clove</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Garlic</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Salt</a>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a class="dropdown-item" href="#">Saffron</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Mustard</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cumin</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Cardamom</a>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a class="dropdown-item" href="#">Poppy-seed</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Aniseed</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Tumeric</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Coriander</a>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a class="dropdown-item" href="#">Chilli</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Black-pepper</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Dry-ginger</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Fenugreek</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            SeaFood
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img class="img1" src="images/sea.jpg">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Crab</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Fish Fillets</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Fish Steak</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a class="dropdown-item" href="#">Fish Whole</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Shrimp</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Lobster</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a class="dropdown-item" href="#">Prepped Shelfish</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="dropdown-item" href="#">Salmon</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="row" style="margin-left: 85px;margin-right: -98px;margin-top: -50px;z-index: -1">
+
+        <div class="col-md-3" style="margin-right: -110px">
+            <img src="images/f2.jpg" alt="Nature">
+        </div>
+
+        <div class="col-md-3" style="margin-right: -110px">
+            <img src="images/f2.jpg" alt="Nature">
+        </div>
+
+        <div class="col-md-3" style="margin-right: -110px">
+            <img src="images/f2.jpg" alt="Nature">
+        </div>
+
+        <div class="col-md-3" style="margin-right: -110px">
+            <img src="images/f2.jpg" alt="Nature">
+        </div>
+
+        <div class="col-md-3" style="margin-right: -110px">
+            <img src="images/f2.jpg" alt="Nature">
+        </div>
+
+
+    </div>
+
+    <div style="font-size: 170px;font-family:'Rouge Script',cursive;position: absolute;padding-left: 520px;color:#f4ee42;font-weight: bold;margin-top: -100px">Fruits</div>
+
+
+    <div style="width:92%;padding-left: 100px">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br><br><br><br><br><br>
+                <div class="thumbnail">
+                    <div class="container" style=" position: relative;width: 90%;">
+
+                        <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                        <div class="overlay">
+                            <div class="text">WATER MELON</div>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <hr />
+
+                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                    <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                    <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    </div>
+
+    <br><br>
+    <footer style="background-color: maroon; ">
+        <div class="row">
+            <div id="loc" class="col-xs-12">
+
+                <h1 class="sty" style="color: #ffff7e; padding-left: 370px; font-size: 55px;">Karachi . Lahore . Islamabad  </h1>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div id="links" class="col-xs-12 col-md-4 col-lg-3">
+
+                <ol>
+                    <br>
+                    <li style="color: #ffff7e;" class="mainh"><span style="color:#FFE5B4;font-weight: bold">I</span>nformation</li>
+                    <hr>
+                    <li><a href="home.php">Home</a></li>
+
+                    <li><a href="about.php">About</a></li>
+
+                    <li><a href="contact.php">Contact</a></li>
+
+                    <li><a href="review.php">Review</a></li>
+
+                </ol>
+
+            </div>
+
+            <div id="links" class="col-xs-12 col-md-4 col-lg-3">
+
+                <ol>
+                    <br>
+                    <li style="color: #ffff7e;" class="mainh"><span style="color:#FFE5B4;font-weight: bold">C</span>ategories</li>
+                    <hr>
+
+                    <li><a href="#">Fruits</a></li>
+
+                    <li><a href="#">Vegetables</a></li>
+
+                    <li><a href="#">Meat & Poultry</a></li>
+
+                    <li><a href="#">Bakery & Pastry</a></li>
+
+                    <li><a href="#">Spices</a></li>
+
+                    <li><a href="#">SeaFood</a></li>
+
+                </ol>
+
+            </div>
+
+            <div id="add" class="col-xs-12 col-md-4 col-lg-4">
+
+                <div style="color: #ffff7e ;" class="address"><span style="color:#FFE5B4;font-weight: bold">O</span>ur Contacts</div>
+                <hr>
+                <div style="color: #ffff7e;" class="ic">
+                    <p><span class="glyphicon glyphicon-map-marker"></span>  Nida Apartment , SB-5  Block-1  Gulshan-e-Iqbal Karachi,Pakistan</p>
+                    <p><span class="glyphicon glyphicon-phone"></span>  0300-2469199</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span>  grocerycart01@gmail.com</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div id="follow">
+
+            <p> Follow us on </p>
+
+            <hr>
+            <!-- Add font awesome icons -->
+
+
+            <div id="followlinks">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-snapchat"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-google"></a>
+            </div>
+
+
+        </div>
+
+        <br>
+
+
+        <!-- </div> -->
+    </footer>
+    <!-- FOOTER CLOSE -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</html>
+

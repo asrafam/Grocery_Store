@@ -1,0 +1,284 @@
+﻿@using Grocery_Store.Entity
+@model System.Collections.Generic.IEnumerable<Product>
+
+<style>
+
+    /*name overlay*/
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: .2s ease;
+        background-color: #f4ee42;
+    }
+
+    .container:hover .overlay {
+        opacity: 0.5;
+    }
+
+
+    .text {
+        color: green;
+        font-weight: bold;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /*add cart */
+
+    .button {
+        border: none;
+        color: #909188;
+        padding: 13px 55px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button2 {
+        background-color: #f4ee42;
+    }
+
+    .checked {
+        color: #f4ee42;
+    }
+</style>
+
+<div class="row" style="margin-bottom: 40px;">
+
+
+    <div style="font-size: 80px;font-family: 'Roboto Condensed', sans-serif;position: absolute;padding-left: 470px;color:#34691f;font-weight: bold;margin-top: 0px">Vegetables</div>
+
+   
+        <div style="width:92%;padding-left: 100px">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3">
+                        <br><br><br><br><br><br>
+                                            <div class="thumbnail">
+
+                                                <div class="container" style=" position: relative;width: 90%;">
+                                                    <img src="~/images/@item.FileName" alt="Vegetable" style="width:100% ; height:100px">
+                                                    <div class="overlay">
+                                                        <div class="text">@Html.DisplayFor(modelItem => item.Name)</div>
+                                                    </div>
+
+                                                </div>
+
+                                                <br>
+                                                <hr />
+                                                <center>
+                                                    <span style="padding-right: 2px;font-size:25px;font-weight: bold">Rs.@Html.DisplayFor(modelItem => item.Price)</span>
+                                                    <br />
+
+                                                    <i class="fa fa-star fa-2x checked " style="margin-right: -10px" aria-hidden="true"></i>
+                                                    <i class="fa fa-star fa-2x checked" style="margin-right: -10px" aria-hidden="true"></i>
+                                                    <i class="fa fa-star fa-2x checked" style="margin-right: -10px" aria-hidden="true"></i>
+                                                    <i class="fa fa-star fa-2x" style="margin-right: -10px" aria-hidden="true"></i>
+                                                    <i class="fa fa-star fa-2x" style="margin-right: -10px" aria-hidden="true"></i>
+
+                                                    <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                                                 </center>
+</div>
+                                                 </div>
+                }
+                </div>
+            </div>
+    </div>
+</div>
+                @*<div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">@Html.DisplayFor(modelItem => item.Name)</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">@Html.DisplayFor(modelItem => item.Price)</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+                }
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <br><br><br><br><br><br>
+                    <div class="thumbnail">
+                        <div class="container" style=" position: relative;width: 90%;">
+
+                            <img src="~/images/f1.jpg" alt="Fjords" style="width:100%">
+                            <div class="overlay">
+                                <div class="text">WATER MELON</div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr />
+
+                        <span style="padding-right: 2px;font-size:25px;font-weight: bold">$30.0</span>
+                        <i class="fa fa-star fa-2x checked " style="margin-right: -12px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x checked" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" style="margin-right: -11px" aria-hidden="true"></i>
+
+                        <button class="button button2" style="margin-left: 6px;margin-top: 20px"><i class="fas fa-shopping-cart"></i> ADD TO CART</button>
+                    
+                    </div>
+                </div>
+                
+            </div>
+        </div>*@
+

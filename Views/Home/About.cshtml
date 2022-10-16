@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<title>@ViewData["Title"] About </title>
+
+<h1>About</h1>
+@{
+    var name = "";
+    var category = "";
+    name = TempData["name"] as string;
+    category = TempData["category"] as string;
+
+}
+<br />
+<h2> @name </h2>
+<h2> @category </h2>

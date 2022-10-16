@@ -1,0 +1,50 @@
+﻿
+@using Grocery_Store.Entity
+@model System.Collections.Generic.IEnumerable<Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+    
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th>Category</th>
+            <th>Action</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+
+            </td>
+            <td>@Html.ActionLink("Edit", "EditProduct", new { id = item.Id }, new { @class = "btn btn-outline-success", @style = "clor: white" })
+            @Html.ActionLink("Delete", "DelProduct", new { id = item.Id }, new { @class = "btn btn-outline-success", @style = "clor: white" })</td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+

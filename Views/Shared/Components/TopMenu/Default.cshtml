@@ -1,0 +1,21 @@
+﻿@using Grocery_Store.ViewModel.Components
+@model IList<MenuItemVM>
+<ul class="nav navbar-nav">
+    @foreach (var item in Model)
+    {
+        var url = item.Url;
+        var target = "_self";
+
+        if (url.StartsWith("~"))
+        {
+            url = Url.Content(url);
+        }
+        if (item.OpenInNewWindow)
+        {
+            target = "_blank";
+        }
+
+        <li style="margin-right: 10px;"><a href="@url" target="@target">@item.Title</a></li>
+    }
+</ul>
+@*<p>Hello World</p>*@
